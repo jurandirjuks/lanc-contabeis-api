@@ -1,0 +1,30 @@
+subprojects {
+    group 'com.comexport'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    buildscript {
+        ext {
+            springBootVersion = '2.0.1.RELEASE'
+            junitVersion = '4.11'
+            springVersion = '5.0.5.RELEASE'
+        }
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        }
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testCompile "junit:junit:$junitVersion"
+    }
+}

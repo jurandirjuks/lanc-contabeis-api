@@ -1,0 +1,5 @@
+rootProject.name = 'lanc-contabeis-api'
+
+include 'api'
+include 'service'
+
