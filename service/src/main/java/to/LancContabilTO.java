@@ -1,22 +1,24 @@
 package to;
 
+import modelo.entidades.LancamentoContabil;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class LancContabilTO {
 
-    private long contacontabil;
+    private long contaContabil;
 
     private Date data;
 
     private BigDecimal valor;
 
-    public long getContacontabil() {
-        return contacontabil;
+    public long getContaContabil() {
+        return contaContabil;
     }
 
-    public void setContacontabil(long contacontabil) {
-        this.contacontabil = contacontabil;
+    public void setContaContabil(long contaContabil) {
+        this.contaContabil = contaContabil;
     }
 
     public Date getData() {
@@ -34,4 +36,13 @@ public class LancContabilTO {
     public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
+
+    public static LancContabilTO createFrom(LancamentoContabil lancamentoContabil) {
+        LancContabilTO to = new LancContabilTO();
+        to.setValor(lancamentoContabil.getValor());
+        to.setData(lancamentoContabil.getDataLancamento());
+        to.setContaContabil(lancamentoContabil.getContaContabil().getId());
+        return to;
+    }
+
 }

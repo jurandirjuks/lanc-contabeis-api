@@ -1,5 +1,7 @@
 package modelo.entidades;
 
+import org.springframework.util.DigestUtils;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -9,8 +11,7 @@ import java.util.Date;
 public class LancamentoContabil  {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
 
     @ManyToOne
     private ContaContabil contaContabil;
@@ -21,11 +22,15 @@ public class LancamentoContabil  {
     @Column(nullable = false)
     private BigDecimal valor;
 
-    public Long getId() {
+
+    public LancamentoContabil() {
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -51,5 +56,16 @@ public class LancamentoContabil  {
 
     public void setValor(BigDecimal valor) {
         this.valor = valor;
+    }
+
+    @Transient
+    public String generateID(){
+        String id = DigestUtils.md5DigestAsHex(this.toString().getBytes());
+        StringBuilder b = new StringBuilder(id);
+        b.insert(8,"-");
+        b.insert(13,"-");
+        b.insert(18,"-");
+        b.insert(23,"-");
+        return b.toString();
     }
 }

@@ -34,26 +34,21 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <!--<build>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
 
     <repositories>
-        <model.repository>
+        <repository>
             <id>spring-releases</id>
             <name>Spring Releases</name>
             <url>https://repo.spring.io/libs-release</url>
-        </model.repository>
-        <model.repository>
-            <id>org.jboss.modelo.repository.releases</id>
-            <name>JBoss Maven Release Repository</name>
-            <url>https://modelo.repository.jboss.org/nexus/content/repositories/releases</url>
-        </model.repository>
+        </repository>
     </repositories>
 
     <pluginRepositories>

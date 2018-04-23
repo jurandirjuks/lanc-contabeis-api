@@ -6,6 +6,9 @@ import javax.persistence.*;
 @Table(name = "CONTA_CONTABIL")
 public class ContaContabil {
 
+    public ContaContabil() {
+    }
+
     @Id
     @GeneratedValue
     private Long id;
